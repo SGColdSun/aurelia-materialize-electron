@@ -1,11 +1,7 @@
 {
-  "name": "cli-ts-electron",
-  "description": "An Aurelia electron application.",
+  "name": "aurelia-materialize-electron",
+  "description": "An Aurelia materialize electron application.",
   "version": "0.1.0",
-  "repository": {
-    "type": "???",
-    "url": "???"
-  },
   "license": "MIT",
   "scripts": {
     "____pre____": "",
@@ -13,6 +9,30 @@
     "materializewin": "./node_modules/.bin/r.js.cmd -o tools/rbuild.js",
     "postmaterialize": "au prepare-materialize",
     "postmaterializewin": "au prepare-materialize"
+  },
+  "build": {
+    "appId": "com.github.ullfis.aureliamaterializeelectron",
+    "linux": {
+      "synopsis": "Aurelia Materialize Electron",
+      "category": "Utility",
+      "target": [
+        "deb",
+        "AppImage"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "runAfterFinish": true
+    }
+  },
+  "repository": {
+    "type": "???",
+    "url": "???"
   },
   "dependencies": {
     "aurelia-animator-css": "^1.0.0",
@@ -40,6 +60,7 @@
     "aurelia-tools": "^0.2.2",
     "del": "^2.2.2",
     "electron": "^1.4.3",
+    "electron-builder": "^7.14.2",
     "electron-reload": "^1.0.2",
     "event-stream": "^3.3.3",
     "gulp": "github:gulpjs/gulp#4.0",
