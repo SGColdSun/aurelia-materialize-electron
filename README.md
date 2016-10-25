@@ -1,16 +1,14 @@
-# cli-ts-electron
+# aurelia-materialize-electron
 
-Basic project created with aurelia to run in electron.
+Project created with aurelia/materialize/electron.
 
-## Components
-
-- [Typescript](https://github.com/Microsoft/TypeScript)
 - [aurelia](http://aurelia.io)
-- [aurelia-cli](https://github.com/aurelia/cli) @0.21.0
+- [aurelia-cli](https://github.com/aurelia/cli)
 - [aurelia-i18n](https://github.com/aurelia/i18n)
 - [aurelia-validation](https://github.com/aurelia/validation)
-- [aurelia-materialize-bridge](https://github.com/aurelia-ui-toolkits/aurelia-materialize-bridge) @0.17.1
+- [aurelia-materialize-bridge](https://github.com/aurelia-ui-toolkits/aurelia-materialize-bridge)
 - [electron](http://electron.atom.io/)
+- [electron-builder](https://github.com/electron-userland/electron-builder)
 
 
 ## Install
@@ -18,8 +16,8 @@ Basic project created with aurelia to run in electron.
 Clone this project and cd into cloned folder.
 
 ```bash
-git clone https://github.com/Ullfis/cli-ts-electron.git
-cd cli-ts-electron
+git clone https://github.com/Ullfis/aurelia-materialize-electron.git
+cd aurelia-materialize-electron
 ```
 
 Install dependencies
@@ -56,7 +54,13 @@ Build
 au build --env prod
 ```
 
-Copy files to release folder
+Copy files to release, build unpacked folder and create install file
+
+```bash
+au release --env prod
+```
+
+Copy files to release and build unpacked folder. Useful to test.
 
 ```bash
 au release
