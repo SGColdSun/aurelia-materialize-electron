@@ -6,7 +6,8 @@ import * as del from 'del';
 export default function prepareOutput() {
 
   return del([
-    path.join(project.platform.output, '**/*.*')
+    path.join(project.platform.output, '**/*.*'),
+    '!' + project.platform.output
   ]);
 
 }

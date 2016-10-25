@@ -1,11 +1,17 @@
-const electron = require('electron');
-const BrowserWindow = electron.BrowserWindow;
-const path = require('path');
-const reloadFile = path.join(__dirname, 'tools', 'reload.electron');
+var electron = require('electron');
+var BrowserWindow = electron.BrowserWindow;
+var path = require('path');
+var iconFile = path.join(__dirname, '..' , 'icon.png');
 
-require('electron-reload')(reloadFile);
+// electron is started with au script
+if (process.env.RUN_WITH_AU === 'true') {
+  iconFile = path.join(__dirname, 'electron', 'resources', 'icons', '128x128.png');
+  // enable reload
+  var reloadFile = path.join(__dirname, 'tools', 'reload.electron');
+  require('electron-reload')(reloadFile);
+}
 
-const app = electron.app
+var app = electron.app;
 
 app.on('window-all-closed', function () {
   if (process.platform != 'darwin')
@@ -13,13 +19,13 @@ app.on('window-all-closed', function () {
 });
 
 app.on('ready', function () {
-  var main_width = 800;
-  var main_height = 600;
+  var bounds = { 
+    width: 993, 
+    height: 600 
+  };
+  bounds.icon = electron.nativeImage.createFromPath(iconFile);
 
-  var mainWindow = new BrowserWindow({ 
-    width: main_width, 
-    height: main_height
-  });
+  var mainWindow = new BrowserWindow(bounds);
 
   mainWindow.loadURL('file://' + __dirname + '/index.html');
 
