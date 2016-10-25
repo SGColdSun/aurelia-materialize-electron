@@ -1,0 +1,16 @@
+{
+  "name": "aurelia-materialize-electron",
+  "productName": "Aurelia Materialize",
+  "description": "An Aurelia electron application.",
+  "homepage": "https://github.com/Ullfis/aurelia-materialize-electron",
+  "version": "0.1.0",
+  "license": "MIT",  
+  "author": {
+    "name": "Ullfis",
+    "email": "mail@address.com",
+    "url": "https://github.com/Ullfis"
+  },
+  "main": "index.js",  
+  "dependencies": {
+  }
+}

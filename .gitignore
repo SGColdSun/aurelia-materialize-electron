@@ -4,5 +4,6 @@ node_modules
 scripts
 fonts
 styles/materialize.min.css
-release
+electron/src
+electron/release
 npm-debug.*

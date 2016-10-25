@@ -10,6 +10,8 @@ import * as os from 'os';
 import * as childProcess from 'child_process';
 import * as electron from 'electron';
 
+// set flag so electron-reload can run in index.js
+process.env.RUN_WITH_AU = 'true';
 let reloadFile = path.join(__dirname, '..', '..', 'tools', 'reload.electron');
 
 function onChange(path) {
@@ -24,7 +26,7 @@ let serveElectron = gulp.series(
   build,
   done => {
     childProcess
-      .spawn(electron, ["."], {
+      .spawn(electron, ['.'], {
         stdio: 'inherit'
       })
       .on("close", () => {

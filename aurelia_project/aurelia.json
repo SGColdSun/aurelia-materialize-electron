@@ -1,10 +1,16 @@
 {
-  "name": "cli-ts-electron",
+  "name": "aurelia-materialize-electron",
   "type": "project:application",
   "platform": {
     "id": "web",
     "displayName": "Web",
     "output": "scripts",
+    "release": "electron/src",
+    "electron": {
+      "buildResources": "electron/resources",
+      "output": "electron/release",
+      "app": "electron/src"
+    },
     "index": "index.html"
   },
   "transpiler": {
